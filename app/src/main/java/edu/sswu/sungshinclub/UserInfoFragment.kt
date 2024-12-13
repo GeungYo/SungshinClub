@@ -1,5 +1,6 @@
 package edu.sswu.sungshinclub
 
+import edu.sswu.sungshinclub.LoginActivity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +17,7 @@ class UserInfoFragment : Fragment(R.layout.fragment_user_info) {
         val logoutButton = view.findViewById<Button>(R.id.logoutButton)
 
         logoutButton.setOnClickListener {
-            val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+            val sharedPreferences = requireContext().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
 
             // 로그인 상태 초기화

@@ -1,5 +1,6 @@
 package edu.sswu.sungshinclub
 
+import edu.sswu.sungshinclub.LoginActivity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
