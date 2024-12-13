@@ -19,10 +19,30 @@ class HomeFragment : Fragment() {
         val sharedPreferences = requireContext().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
         val studentId = sharedPreferences.getString("currentUser", null) // 현재 사용자 학번
         val userName = sharedPreferences.getString("$studentId:name", "학생 이름") // 사용자 이름
+        val selectedClub = sharedPreferences.getString("$studentId:selectedClub", null) // 선택된 동아리 정보
 
-        // 텍스트 뷰에 사용자 이름 설정
+        // 사용자 정보 및 동아리 정보 설정
         val studentInfoTextView = view.findViewById<TextView>(R.id.studentInfo)
-        studentInfoTextView.text = "$userName 님이 속한 성신여자대학교 동아리는 아래와 같습니다."
+        studentInfoTextView.text = "$userName"
+        val clubName: String
+        val clubDescription: String
+        if (!selectedClub.isNullOrEmpty()) {
+            val splitData = selectedClub.split(":")
+            clubName = splitData[0]
+            clubDescription = splitData[1]
+        } else {
+            clubName = "동아리 이름이 없습니다."
+            clubDescription = "동아리가 선택되지 않았습니다."
+        }
+
+        // 텍스트 뷰에 데이터 설정
+        val homeClubNameTextView = view.findViewById<TextView>(R.id.homeClubName)
+        val homeClubInfoTextView = view.findViewById<TextView>(R.id.homeClubInfo)
+        homeClubNameTextView.text = clubName
+        homeClubInfoTextView.text = clubDescription
+
+
+
 
         return view
     }

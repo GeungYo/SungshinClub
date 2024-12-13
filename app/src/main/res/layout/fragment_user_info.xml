@@ -97,7 +97,9 @@
             android:gravity="center"
             android:text="동아리 선택하기"
             android:textAlignment="center"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:clickable="true"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/addClub"
@@ -108,7 +110,9 @@
             android:gravity="center"
             android:text="동아리 등록하기"
             android:textAlignment="center"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 
