@@ -7,8 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import edu.sswu.sungshinclub.HomeActivity
-import edu.sswu.sungshinclub.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,14 +40,20 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordInput.text.toString()
 
             if (studentId.isNotEmpty() && password.isNotEmpty()) {
-                // 로그인 성공 시 상태 저장
-                val editor = sharedPreferences.edit()
-                editor.putBoolean("isLoggedIn", true)
-                editor.apply()
+                val storedPassword = sharedPreferences.getString("$studentId:password", null)
+                if (storedPassword != null && storedPassword == password) {
+                    // 로그인 성공 시 상태 저장
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isLoggedIn", true)
+                    editor.putString("currentUser", studentId) // 현재 사용자 학번 저장
+                    editor.apply()
 
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-                finish()
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "학번 또는 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "학번과 비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
             }

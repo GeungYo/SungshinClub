@@ -25,7 +25,7 @@ class SignUpFragment : Fragment() {
         val passwordInput = view.findViewById<EditText>(R.id.editTextPassword)
         val submitButton = view.findViewById<Button>(R.id.btnSubmit)
 
-        val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        val sharedPreferences = requireContext().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
 
         submitButton.setOnClickListener {
             val name = nameInput.text.toString()
@@ -38,6 +38,7 @@ class SignUpFragment : Fragment() {
                     val editor = sharedPreferences.edit()
                     editor.putString("$studentId:name", name)
                     editor.putString("$studentId:password", password)
+                    editor.putString("currentUser", studentId) // 현재 사용자 저장
                     editor.apply()
 
                     Toast.makeText(context, "회원가입 성공!", Toast.LENGTH_SHORT).show()
