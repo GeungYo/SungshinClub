@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg">
 
     <!-- Fragment 컨테이너 -->
     <FrameLayout
@@ -13,7 +14,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="-16dp" />
 
-    <!-- 이미지 아이콘 (오른쪽 상단) -->
+    <!-- 이미지 아이콘 (오른쪽 상단) 안 써서 일단 주석 처리 -->
 <!--    <ImageView-->
 <!--        android:id="@+id/notificationIcon"-->
 <!--        android:layout_width="41dp"-->

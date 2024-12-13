@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/bg">
 
     <!-- 학교 로고 -->
     <ImageView
@@ -12,7 +12,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="25dp"
 
         android:src="@drawable/ic_sswu_logo" />
