@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import kotlinx.coroutines.selects.select
 
 class UserInfoFragment : Fragment(R.layout.fragment_user_info) {
 
@@ -33,6 +34,14 @@ class UserInfoFragment : Fragment(R.layout.fragment_user_info) {
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
             activity?.finish()
+        }
+        val addClub = view.findViewById<TextView>(R.id.addClub)
+        addClub.setOnClickListener {
+            //동아리 등록할 수 있는 입력 팝업창
+        }
+        val selectClub = view.findViewById<TextView>(R.id.selectClub)
+        selectClub.setOnClickListener {
+            // 저장된 동아리 이름 선택 기능
         }
     }
 }

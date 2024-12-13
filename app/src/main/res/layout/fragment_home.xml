@@ -5,16 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <!-- 상단 학교 로고 -->
-
-    <!-- 알림 아이콘 -->
-
-    <!-- 회원 정보 아이콘 -->
-
-    <!-- 학생 이름 -->
-
-    <!-- 동아리 리스트 -->
-
+    <!-- 학교 로고 -->
     <ImageView
         android:id="@+id/schoolLogo"
         android:layout_width="80dp"

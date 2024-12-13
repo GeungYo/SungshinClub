@@ -23,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> loadFragment(HomeFragment())
                 R.id.nav_schedule -> loadFragment(ScheduleFragment())
-                R.id.nav_community -> loadFragment(CommunityFragment())
+                R.id.nav_community -> loadFragment(ShortcutFragment())
             }
             true
         }
